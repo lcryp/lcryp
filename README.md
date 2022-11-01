@@ -5,6 +5,11 @@ LCRYP CORE INTEGRATION/STAGING TREE
 
 * [What is LcRyp Core?](#what-is-lcryp-core)
 * [License](#license)
+* [For whom it was created?](#for-whom-it-was-created)
+* [Mining!](#mining)
+* [Protection with all the best](#protection-with-all-the-best)
+* [Innovations in the LcRyp code are dictated by time](#innovations-in-the-lcryp-code-are-dictated-by-time)
+* [MIDAS - Multi Interval Difficulty Adjustment System](#midas---multi-interval-difficulty-adjustment-system)
 * [Development Process](#development-process)
 
 What is LcRyp Core?
@@ -15,22 +20,34 @@ validate blocks and transactions. It also includes a wallet and graphical user
 interface, which can be optionally built. And the possibility of mining on 
 your personal computer.
 
-### For whom it was created?
+License
+-------
+
+LcRyp Core is released under the terms of the MIT license. For more information or see [Copyright (c) 2022 LcRyp](https://lcryp.com/lcryp-core-license.html)
+
+For whom it was created?
+------------------------
+
 The LcRyp coin was created for all those who did not have time to buy bitcoin at 50 cents) 
 or have it on the processor of their personal computer, without video cards and without pools. 
 Just install the ready-made version and run the application on your computer.
 
-### Mining!
+Mining!
+-------
+
 The LcRyp-Qt coin allows you to mining directly from your own GUI (or from the command line) 
 using your CPU cores!
 
-### Protection with all the best.
+Protection with all the best
+----------------------------
+
 The source code of the LcRyp coin is based on the latest version of bitcoin, so it supports 
 all the created bitcoin achievements. Moreover, the development is carried out in such 
 a way that the architecture of the LcRyp code supports the ability to update its code according 
 to any future bitcoin source code updates.
 
-### Innovations in the LcRyp code are dictated by time.
+Innovations in the LcRyp code are dictated by time
+--------------------------------------------------
 The main difference is in the implementation of the complexity adjustment using the MIDAS algorithm.
 Based on the fact that when all bitcoins started there were no super-powerful mining farms and other equipment, the algorithm for linear difficulty correction was
 enough for bitcoin. In this form, changes in difficulty occurred after 2 weeks. But if someone by that time had the current potency
@@ -39,7 +56,8 @@ In today's realities, it is necessary to implement a more advanced algorithm cap
 depending on how the power of miners changes to stabilize the average difficulty of mining a block in 10 minutes.
 and thus prevent super-farms from pere-minting the coin.
 
-### MIDAS - Multi Interval Difficulty Adjustment System.
+MIDAS - Multi Interval Difficulty Adjustment System
+---------------------------------------------------
 Responds well to sudden changes in hashing power whether up or down. Emergency adjustments if needed usually kick in within ten blocks, 
 and in non-emergencies it’s got a responsive but gradual and well-damped adjustment.
 Additionally, it makes an effort to keep the block chain height approximately synchronized with real time. 
@@ -53,12 +71,6 @@ they are actually needed.
 Because the intervals it checks have no common divisor, it is also extremely resistant to timewarp attacks; there are no 'harmonics' 
 for an attacker to exploit that would allow bogus timestamps at particular intervals to reinforce each other leading to spurious adjustments, 
 and no way for a bogus timestamp to cause a disproportional difficulty adjustment. 
-
-
-License
--------
-
-LcRyp Core is released under the terms of the MIT license. For more information or see [Copyright (c) 2022 LcRyp](https://lcryp.com/lcryp-core-license.html)
 
 Development Process
 -------------------
