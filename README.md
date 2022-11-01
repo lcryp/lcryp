@@ -65,7 +65,7 @@ Use a folder `C:\LcRyp\lcryp-master\`
 ###  Installation Python
 
 **1. In order to correctly assemble projects, it is necessary to execute a python script.**
-* Get started [with python](https://www.python.org)
+* Get started with [Python](https://www.python.org)
 * Install [Python 3.8](https://www.python.org/ftp/python/3.8.0/python-3.8.0-amd64.exe) 
 * Python Installation folder `C:\Python38\`
 
@@ -78,14 +78,14 @@ SETX PYTHONUTF8 1
 
 ### Installation Vcpkg
 
-To build [dependencies] (except for [Qt](#Installation Qt)), the default approach is to use Vcpkg:
+To build [dependencies] (except for [Qt](#installation-qt)), the default approach is to use Vcpkg:
 
-**1. Download a single ZIP archive of Vcpkg source code** 
-[About Vcpkg] https://docs.microsoft.com/en-us/cpp/vcpkg package manager from Microsoft.
-[Get started with vcpkg] https://www.vcpkg.io/en/getting-started.html
-from official [source code] https://github.com/microsoft/vcpkg 
-(Download the archive [`vcpkg-master.zip`](https://github.com/microsoft/vcpkg/archive/refs/heads/master.zip)), 
-and expand it into a dedicated folder `C:\vcpkg`. 
+**1. Download a single ZIP archive of vcpkg source code** 
+* About [vcpkg](https://docs.microsoft.com/en-us/cpp/vcpkg) package manager from Microsoft.
+* Get started with [vcpkg](https://www.vcpkg.io/en/getting-started.html).
+* From official [source code](https://github.com/microsoft/vcpkg).
+* Download the archive [`vcpkg-master.zip`](https://github.com/microsoft/vcpkg/archive/refs/heads/master.zip).
+* and expand it into a dedicated folder `C:\vcpkg`. 
 
 **2. Create a bat file `C:\vcpkg\bootstrap-vcpkg.bat` and execute it**
 
