@@ -196,4 +196,18 @@ Or you can run a ready-made file:
 
 `"C:\LcRyp\lctyp-master\build_msvc.bat"`
 
-Alternatively, open the `C:\LcRyp\lctyp-master\build_msvc\build_msvc\lcryp.sln` file in Visual Studio 2022.
+```cmd
+@echo off
+set prg=lcryp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\msbuild.exe" build_msvc\%prg%.sln -property:Configuration=Release -maxCpuCount -verbosity:minimal
+rd /s /q LcRyp-Wallet
+MD LcRyp-Wallet
+MD LcRyp-Wallet\daemon
+copy "build_msvc\x64\Release\%prg%-qt.exe" "LcRyp-wallet\%prg%-qt.exe"
+copy "build_msvc\x64\Release\%prg%-cli.exe" "LcRyp-wallet\daemon\%prg%-cli.exe"
+copy "build_msvc\x64\Release\%prg%-tx.exe" "LcRyp-wallet\daemon\%prg%-tx.exe"
+copy "build_msvc\x64\Release\%prg%d.exe" "LcRyp-wallet\daemon\%prg%d.exe"
+pause
+```
+
+Alternatively, open the `C:\LcRyp\lctyp-master\build_msvc\build_msvc\lcryp.sln` file in Visual Studio 2022. When compiling from the environment, specify the both `release` or `debug` builds for each method.
