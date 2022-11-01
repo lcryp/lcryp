@@ -163,7 +163,7 @@ nmake install
 `QTBASEDIR` `C:\qt-static-5.15.6\` 
 
 ```cmd
-setx QTBASEDIR "C:\qt-static-5.15.6\"  /M 
+setx QTBASEDIR "C:\qt-static-5.15.6\" /M 
 ```
 
 ***To build LcRyp Core without Qt, unload or disable the `lcryp-qt` and `liblcryp_qt` projects.***
