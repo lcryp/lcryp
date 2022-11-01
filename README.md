@@ -15,6 +15,46 @@ validate blocks and transactions. It also includes a wallet and graphical user
 interface, which can be optionally built. And the possibility of mining on 
 your personal computer.
 
+### For whom it was created?
+The LcRyp coin was created for all those who did not have time to buy bitcoin at 50 cents) 
+or have it on the processor of their personal computer, without video cards and without pools. 
+Just install the ready-made version and run the application on your computer.
+
+### Mining!
+The LcRyp-Qt coin allows you to mining directly from your own GUI (or from the command line) 
+using your CPU cores!
+
+### Protection with all the best.
+The source code of the LcRyp coin is based on the latest version of bitcoin, so it supports 
+all the created bitcoin achievements. Moreover, the development is carried out in such 
+a way that the architecture of the LcRyp code supports the ability to update its code according 
+to any future bitcoin source code updates.
+
+### Innovations in the LcRyp code are dictated by time.
+The main difference is in the implementation of the complexity adjustment using the MIDAS algorithm.
+Based on the fact that when all bitcoins started there were no super-powerful mining farms and other equipment, the algorithm for linear difficulty correction was
+enough for bitcoin. In this form, changes in difficulty occurred after 2 weeks. But if someone by that time had the current potency
+he just would have dealt all the coin in two weeks) and if it were time to change the difficulty, the coins would have ended in 2 weeks).
+In today's realities, it is necessary to implement a more advanced algorithm capable of dynamically changing the complexity.
+depending on how the power of miners changes to stabilize the average difficulty of mining a block in 10 minutes.
+and thus prevent super-farms from pere-minting the coin.
+
+### MIDAS - Multi Interval Difficulty Adjustment System.
+Responds well to sudden changes in hashing power whether up or down. Emergency adjustments if needed usually kick in within ten blocks, 
+and in non-emergencies it’s got a responsive but gradual and well-damped adjustment.
+Additionally, it makes an effort to keep the block chain height approximately synchronized with real time. 
+If it’s more behind, MIDAS will be trying to make block times about 10% faster than nominal, and if it’s more ahead, 
+it will be trying to make block times about 10% slower than nominal. In between, there’s a linear interpolation between those 
+speeds – meaning the point toward which MIDAS regulates will be exactly the nominal block time whenever there’s an exact correspondence 
+between block height and real time. 
+By checking multiple different intervals and making adjustments only when there is agreement as judged by several intervals as to which 
+way and approximately how extreme the adjustment should be, MIDAS both avoids twitchiness and permits fairly extreme adjustments when 
+they are actually needed.
+Because the intervals it checks have no common divisor, it is also extremely resistant to timewarp attacks; there are no 'harmonics' 
+for an attacker to exploit that would allow bogus timestamps at particular intervals to reinforce each other leading to spurious adjustments, 
+and no way for a bogus timestamp to cause a disproportional difficulty adjustment. 
+
+
 License
 -------
 
