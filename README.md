@@ -166,6 +166,7 @@ To build [dependencies] (except for [Qt](#installation-qt)), the default approac
 @echo off
 powershell.exe -NoProfile -ExecutionPolicy Bypass "& {& '%~dp0scripts\bootstrap.ps1' %*}"
 %comspec% /k "С:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
+pause
 ```
 
 After running this file, a console window will open in which you need to enter the following 3 lines in sequence:
