@@ -192,4 +192,8 @@ Create a bat file `C:\LcRyp\lctyp-master\build_msvc.bat`
 pause
 ```
 
+Or you can run a ready-made file:
+
+`"C:\LcRyp\lctyp-master\build_msvc.bat"`
+
 Alternatively, open the `C:\LcRyp\lctyp-master\build_msvc\build_msvc\lcryp.sln` file in Visual Studio 2022.
