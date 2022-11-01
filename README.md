@@ -45,17 +45,23 @@ To build LcRyp Core from the command-line, it is sufficient to only install the 
 
 **Catalogs by default (the explanation will be in the text below)**
 
-* Visual Studio 2022 `C:\Programing Files\Microsoft Visual Studio\2022`
-* Source codes LcRyp `C:\LcRyp\lcryp-master`
-* Vcpkg ready assembly `C:\vcpkg`
-* QT source codes `C:\qt-everywhere-src-5.15.6`
-* QT ready assembly `C:\qt-static-5.15.6`
+* Visual Studio 2022 `C:\Programing Files\Microsoft Visual Studio\2022\`
+* Source codes LcRyp `C:\LcRyp\lcryp-master\`
+* Vcpkg ready assembly `C:\vcpkg\`
+* QT source codes `C:\qt-everywhere-src-5.15.6\`
+* QT ready assembly `C:\qt-static-5.15.6\`
 * Python `C:\Python38\`
 
 **Environment Variables**
 
 * `QTBASEDIR` `C:\qt-static-5.15.6\`
 * `PYTHONUTF8` `1`
+
+### Download the Microsoft Visual Studio 2022
+
+* Download [Microsoft Visual Studio 2022](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false)
+* Use a folder `C:\Programing Files\Microsoft Visual Studio\2022\`
+* Configure component installation: Classic and mobile apps -> C++ desktop development.
 
 ### Download the project source codes
 
