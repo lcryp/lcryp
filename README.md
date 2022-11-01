@@ -35,6 +35,14 @@ On Windows, using [Microsoft Visual Studio 2022](https://www.visualstudio.com)
 Building LcRyp Core with Visual Studio
 --------------------------------------
 
+* [Introduction](#introduction)
+* [Download the Microsoft Visual Studio 2022](#download-the-microsoft-visual-studio-2022)
+* [Download the project LcRyp source codes](#download-the-project-source-codes)
+* [Installation Python](#installation-python)
+* [Installation Vcpkg](#installation-vcpkg)
+* [Installation Qt](#installation-qt)
+* [Building](#building)
+
 ### Introduction
 
 Visual Studio 2022 is minimum required to build LcRyp Core.
@@ -60,10 +68,10 @@ To build LcRyp Core from the command-line, it is sufficient to only install the 
 ### Download the Microsoft Visual Studio 2022
 
 * Download [Microsoft Visual Studio 2022](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false)
-* Use a folder `C:\Programing Files\Microsoft Visual Studio\2022\`
 * Configure component installation: Classic and mobile apps -> C++ desktop development.
+* Use a folder `C:\Programing Files\Microsoft Visual Studio\2022\`
 
-### Download the project source codes
+### Download the project LcRyp source codes
 
 * Download source codes [lcryp-master](https://github.com/lcryp/LcRyp/archive/refs/heads/master.zip)
 * Use a folder `C:\LcRyp\lcryp-master\`
