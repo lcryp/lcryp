@@ -58,18 +58,37 @@ To build LcRyp Core from the command-line, it is sufficient to only install the 
 * `QTBASEDIR` `C:\qt-static-5.15.6\`
 * `PYTHONUTF8` `1`
 
+### Download the project source codes
+
+Use a folder `C:\LcRyp\lctyp-master\`
+
 ###  Installation Python
 
-**[Install](https://www.python.org) Python [3.8]. Python Installation folder `C:\Python38\`**
+**1. In order to correctly assemble projects, it is necessary to execute a python script.**
+[Get started with python] https://www.python.org 
+[Install](https://www.python.org/ftp/python/3.8.0/python-3.8.0-amd64.exe) Python [3.8]. Python Installation folder `C:\Python38\`
+
+**2. Create environment variables** 
+`PYTHONUTF8` `1`
+
+```cmd
+SETX PYTHONUTF8 1
+```
 
 ### Installation Vcpkg
 
-To build [dependencies] (except for [Qt](#qt)), the default approach is to use the [vcpkg](https://docs.microsoft.com/en-us/cpp/vcpkg) package manager from Microsoft:
+To build [dependencies] (except for [Qt](#Installation Qt)), the default approach is to use Vcpkg:
 
-**1. [Install](https://www.vcpkg.io/en/getting-started.html) vcpkg.**
-Create a bat file `C:\vcpkg\bootstrap-vcpkg.bat`
+**1. Download a single ZIP archive of Vcpkg source code** 
+[About Vcpkg] https://docs.microsoft.com/en-us/cpp/vcpkg package manager from Microsoft.
+[Get started with vcpkg] https://www.vcpkg.io/en/getting-started.html
+from official [source code] https://github.com/microsoft/vcpkg 
+(Download the archive [`vcpkg-master.zip`](https://github.com/microsoft/vcpkg/archive/refs/heads/master.zip)), 
+and expand it into a dedicated folder `C:\vcpkg`. 
 
-``` 
+**2. Create a bat file `C:\vcpkg\bootstrap-vcpkg.bat` and execute it**
+
+```cmd
 @echo off
 %comspec% /k "C:\Programing Files\Microsoft Visual Studio\2022\VC\Auxiliary\Build\vcvars64.bat"
 .\vcpkg.exe update
@@ -78,7 +97,7 @@ Create a bat file `C:\vcpkg\bootstrap-vcpkg.bat`
 pause
 ```
 
-** 2. By default, vcpkg makes both `release` and `debug` builds for each package.**
+**3. By default, vcpkg makes both `release` and `debug` builds for each package.**
 To save build time and disk space, one could skip `debug` builds (example uses PowerShell, let's set the environment variable): 
 ```powershell
 Add-Content -Path "vcpkg\triplets\x64-windows-static.cmake" -Value "set(VCPKG_BUILD_TYPE release)"
@@ -112,7 +131,11 @@ pause
 **3. Create environment variables** 
 `QTBASEDIR` `C:\qt-static-5.15.6\` 
 
-*** To build LcRyp Core without Qt, unload or disable the `lcryp-qt`, `liblcryp_qt` and `test_lcryp-qt` projects.***
+```cmd
+SETX QTBASEDIR "C:\qt-static-5.15.6\"
+```
+
+*** To build LcRyp Core without Qt, unload or disable the `lcryp-qt` and `liblcryp_qt` projects.***
 
 ### Building
 
@@ -120,7 +143,7 @@ pause
 For the Visual Studio 2022 in accordance with the configurations, it is necessary to run the python script toolchain from Makefile:
 
 ```cmd
-python build_msvc\msvc-autogen.py
+"C:\Python38\python.exe" build_msvc\msvc-autogen.py
 ```
 
 **2. An optional step is to adjust the settings** 
@@ -131,10 +154,10 @@ The Qt directories can also be set. To specify a non-default path to a static Qt
 **3. To build from the command-line with the Visual Studio toolchain use:**
 Create a bat file `C:\LcRyp\lctyp-master\build_msvc.bat`
 
-```
+```cmd
 @echo off
 "C:\Programing Files\Microsoft Visual Studio\2022\MSBuild\Current\Bin\msbuild.exe" build_msvc\lcryp.sln -property:Configuration=Release -maxCpuCount -verbosity:minimal
 pause
 ```
 
-***Alternatively, open the `build_msvc/lcryp.sln` file in Visual Studio.***
+Alternatively, open the `build_msvc/lcryp.sln` file in Visual Studio.
