@@ -60,7 +60,8 @@ To build LcRyp Core from the command-line, it is sufficient to only install the 
 
 ### Download the project source codes
 
-Use a folder `C:\LcRyp\lcryp-master\`
+* [lcryp-master](https://github.com/lcryp/LcRyp/archive/refs/heads/master.zip)
+* Use a folder `C:\LcRyp\lcryp-master\`
 
 ###  Installation Python
 
