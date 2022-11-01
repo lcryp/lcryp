@@ -34,7 +34,7 @@ Below are some notes on how to build LcRyp Core for Windows x64.
 
 The options known to work for building LcRyp Core on Windows are:
 
-On Windows, using [Microsoft Visual Studio 2022](https://www.visualstudio.com)
+On Windows x64, using [Microsoft Visual Studio 2022](https://www.visualstudio.com)
 
 Building LcRyp Core with Visual Studio
 --------------------------------------
@@ -57,7 +57,7 @@ To build LcRyp Core from the command-line, it is sufficient to only install the 
 
 **Catalogs by default (the explanation will be in the text below)**
 
-* Visual Studio 2022 `C:\Programing Files\Microsoft Visual Studio\2022\`
+* Visual Studio 2022 `С:\Program Files\Microsoft Visual Studio\2022\`
 * Source codes LcRyp `C:\LcRyp\lcryp-master\`
 * Vcpkg ready assembly `C:\vcpkg\`
 * QT source codes `C:\qt-everywhere-src-5.15.6\`
@@ -68,6 +68,7 @@ To build LcRyp Core from the command-line, it is sufficient to only install the 
 
 * `QTBASEDIR` `C:\qt-static-5.15.6\`
 * `PYTHONUTF8` `1`
+* `Path` add to existing line C:\Python38\Scripts\;C:\Python38\;
 
 ### Download the Microsoft Visual Studio 2022
 
@@ -103,11 +104,12 @@ To build [dependencies] (except for [Qt](#installation-qt)), the default approac
 * Download the archive [`vcpkg-master.zip`](https://github.com/microsoft/vcpkg/archive/refs/heads/master.zip).
 * And expand it into a dedicated folder `C:\vcpkg`. 
 
-**2. Create a bat file `C:\vcpkg\bootstrap-vcpkg.bat` and execute it**
+**2. Create a bat file `C:\vcpkg\install-vcpkg.bat` and execute it**
 
 ```cmd
 @echo off
-%comspec% /k "C:\Programing Files\Microsoft Visual Studio\2022\VC\Auxiliary\Build\vcvars64.bat"
+powershell.exe -NoProfile -ExecutionPolicy Bypass "& {& '%~dp0scripts\bootstrap.ps1' %*}"
+%comspec% /k "С:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
 .\vcpkg.exe update
 .\vcpkg.exe integrate install
 .\vcpkg.exe install --clean-after-build --triplet x64-windows-static --x-manifest-root "C:\LcRyp\lctyp-master\build_msvc" 
@@ -117,7 +119,7 @@ pause
 **3. By default, vcpkg makes both `release` and `debug` builds for each package.**
 To save build time and disk space, one could skip `debug` builds (example uses PowerShell, let's set the environment variable): 
 ```powershell
-Add-Content -Path "vcpkg\triplets\x64-windows-static.cmake" -Value "set(VCPKG_BUILD_TYPE release)"
+Add-Content -Path "C:\vcpkg\triplets\x64-windows-static.cmake" -Value "set(VCPKG_BUILD_TYPE release)"
 ```
 
 ### Installation Qt
