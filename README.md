@@ -87,7 +87,7 @@ For the correct assembly of projects, it is necessary to be able to execute pyth
 * Get started with [Python](https://www.python.org)
 * Python 3.8 [Install](https://www.python.org/ftp/python/3.8.0/python-3.8.0-amd64.exe) 
 * Python installation folder `C:\Python38\`
-* Create environment variables `PYTHONUTF8` `1`
+* Create environment variables `PYTHONUTF8` `1` and `Path` add to existing line `C:\Python38\Scripts\;C:\Python38\;`
 
 ```cmd
 setx PYTHONUTF8 1 /M 
@@ -134,11 +134,11 @@ To build LcRyp Core with the GUI, a static build of Qt is required.
 * And expand it into a dedicated folder is `C:\qt-everywhere-src-5.15.6`
 
 **2. Open "x64 Native Tools Command Prompt for VS 2022", and input the following commands or create a bat file:** 
-Create a bat file `C:\qt-everywhere-src-5.15.6\install-qt-everywhere-src-5.15.6.bat` and execute it.
+Create a bat file `C:\qt-everywhere-src-5.15.6\install-qt.bat` and execute it.
 
 ```
 @echo off
-%comspec% /k "F:\ProgramingFiles\Microsoft Visual Studio\2022\VC\Auxiliary\Build\vcvars64.bat"
+%comspec% /k "С:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
 cd C:\qt-everywhere-src-5.15.6
 mkdir build
 cd C:\qt-everywhere-src-5.15.6\build\
