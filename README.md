@@ -60,18 +60,16 @@ To build LcRyp Core from the command-line, it is sufficient to only install the 
 
 ### Download the project source codes
 
-* [lcryp-master](https://github.com/lcryp/LcRyp/archive/refs/heads/master.zip)
+* Download source codes [lcryp-master](https://github.com/lcryp/LcRyp/archive/refs/heads/master.zip)
 * Use a folder `C:\LcRyp\lcryp-master\`
 
 ###  Installation Python
 
-**1. In order to correctly assemble projects, it is necessary to execute a python script.**
+In order to correctly assemble projects, it is necessary to execute a python script.
 * Get started with [Python](https://www.python.org)
-* Install [Python 3.8](https://www.python.org/ftp/python/3.8.0/python-3.8.0-amd64.exe) 
-* Python Installation folder `C:\Python38\`
-
-**2. Create environment variables** 
-`PYTHONUTF8` `1`
+* Python 3.8 [Install](https://www.python.org/ftp/python/3.8.0/python-3.8.0-amd64.exe) 
+* Python installation folder `C:\Python38\`
+* Create environment variables `PYTHONUTF8` `1`
 
 ```cmd
 SETX PYTHONUTF8 1
