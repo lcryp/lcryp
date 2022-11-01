@@ -136,11 +136,10 @@ To build LcRyp Core with the GUI, a static build of Qt is required.
 **2. Open "x64 Native Tools Command Prompt for VS 2022", and input the following commands or create a bat file:** 
 Create a bat file `C:\qt-everywhere-src-5.15.6\install-qt.bat` and execute it.
 
-```
+```cmd
 @echo off
 %comspec% /k "С:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
-cd C:\qt-everywhere-src-5.15.6
-mkdir build
+mkdir C:\qt-everywhere-src-5.15.6\build\
 cd C:\qt-everywhere-src-5.15.6\build\
 ..\configure -release -silent -opensource -confirm-license -opengl desktop -no-shared -static -static-runtime -mp -qt-zlib -qt-pcre -qt-libpng -no-libjpeg -nomake examples -nomake tests -nomake tools -no-dbus -no-libudev -no-icu -no-gtk -no-opengles3 -no-angle -no-sql-sqlite -no-sql-odbc -no-sqlite -no-libudev -no-vulkan -skip qt3d -skip qtactiveqt -skip qtandroidextras -skip qtcanvas3d -skip qtcharts -skip qtconnectivity -skip qtdatavis3d -skip qtdeclarative -skip qtdoc -skip qtgamepad -skip qtgraphicaleffects -skip qtimageformats -skip qtlocation -skip qtmacextras -skip qtmultimedia -skip qtnetworkauth -skip qtpurchasing -skip qtquickcontrols -skip qtquickcontrols2 -skip qtscript -skip qtscxml -skip qtsensors -skip qtserialbus -skip qtserialport -skip qtspeech -skip qtvirtualkeyboard -skip qtwayland -skip qtwebchannel -skip qtwebengine -skip qtwebsockets -skip qtwebview -skip qtx11extras -skip qtxmlpatterns -no-openssl -no-feature-sql -no-feature-sqlmodel -prefix "C:\qt-static-5.15.6"
 nmake
