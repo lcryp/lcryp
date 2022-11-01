@@ -233,17 +233,20 @@ setx QTBASEDIR "C:\qt-static-5.15.6\" /M
 
 ### Building ***[LcRyp assembly]***
 
-**1. To generate the project files `*.vcxproj`**
+**1. An optional step is to adjust the settings** 
+In the `build_msvc` directory and the `common.init.vcxproj` file. 
+This project file contains settings that are common to all projects such as the runtime library version and target Windows SDK version. 
+The Qt directories can also be set. To specify a non-default path to a static Qt package directory, use the `QTBASEDIR` environment variable.
+
+**2. To generate the project files `*.vcxproj`**
 For the Visual Studio 2022 in accordance with the configurations, it is necessary to run the python script toolchain from Makefile. To do this, enter the following in the command line:
+
+Create a bat file `C:\lcryp-master\build_msvc\msvc-autogen.bat` and execute it.
 
 ```cmd
 "C:\Python38\python.exe" "C:\lcryp-master\build_msvc\msvc-autogen.py"
 ```
-
-**2. An optional step is to adjust the settings** 
-In the `build_msvc` directory and the `common.init.vcxproj` file. 
-This project file contains settings that are common to all projects such as the runtime library version and target Windows SDK version. 
-The Qt directories can also be set. To specify a non-default path to a static Qt package directory, use the `QTBASEDIR` environment variable.
+Now your project is ready to compile!
 
 **3. To build from the command-line with the Visual Studio toolchain use:**
 Create a bat file `C:\lcryp-master\build_msvc.bat`
