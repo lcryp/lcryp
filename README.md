@@ -73,8 +73,8 @@ To build LcRyp Core from the command-line, it is sufficient to only install the 
 ### Download the Microsoft Visual Studio 2022
 
 * Download [Microsoft Visual Studio 2022](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false)
-* Configure component installation: Classic and mobile apps -> C++ desktop development.
-* Use a folder `C:\Programing Files\Microsoft Visual Studio\2022\`
+* Configure component installation: `Classic and mobile apps` -> `C++ desktop development`
+* Use a folder `С:\Program Files\Microsoft Visual Studio\2022\`
 
 ### Download the project LcRyp source codes
 
@@ -98,11 +98,11 @@ SETX PYTHONUTF8 1
 To build [dependencies] (except for [Qt](#installation-qt)), the default approach is to use Vcpkg:
 
 **1. Download a single ZIP archive of vcpkg source code** 
-* About [vcpkg](https://docs.microsoft.com/en-us/cpp/vcpkg) package manager from Microsoft.
-* Get started with [vcpkg](https://www.vcpkg.io/en/getting-started.html).
-* From official [source code](https://github.com/microsoft/vcpkg).
-* Download the archive [`vcpkg-master.zip`](https://github.com/microsoft/vcpkg/archive/refs/heads/master.zip).
-* And expand it into a dedicated folder `C:\vcpkg`. 
+* About [vcpkg](https://docs.microsoft.com/en-us/cpp/vcpkg) package manager from Microsoft
+* Get started with [vcpkg](https://www.vcpkg.io/en/getting-started.html)
+* From official [source code](https://github.com/microsoft/vcpkg)
+* Download the archive [`vcpkg-master.zip`](https://github.com/microsoft/vcpkg/archive/refs/heads/master.zip)
+* And expand it into a dedicated folder `C:\vcpkg`
 
 **2. Create a bat file `C:\vcpkg\install-vcpkg.bat` and execute it**
 
@@ -127,10 +127,10 @@ Add-Content -Path "C:\vcpkg\triplets\x64-windows-static.cmake" -Value "set(VCPKG
 To build LcRyp Core with the GUI, a static build of Qt is required.
 
 **1. Download a single ZIP archive of Qt source code** 
-* From official [releases](https://download.qt.io/official_releases/qt/).
-* Qt 5.15.6 [`qt-everywhere-opensource-src-5.15.6.zip`](https://download.qt.io/official_releases/qt/5.15/5.15.6/single/qt-everywhere-opensource-src-5.15.6.zip).
+* From official [releases](https://download.qt.io/official_releases/qt/)
+* Qt 5.15.6 [`qt-everywhere-opensource-src-5.15.6.zip`](https://download.qt.io/official_releases/qt/5.15/5.15.6/single/qt-everywhere-opensource-src-5.15.6.zip)
 ***Qt 5.15.6 this is the maximum supported version, higher version does not work.*** 
-* And expand it into a dedicated folder is `C:\qt-everywhere-src-5.15.6`.
+* And expand it into a dedicated folder is `C:\qt-everywhere-src-5.15.6`
 
 **2. Open "x64 Native Tools Command Prompt for VS 2022", and input the following commands or create a bat file:** 
 Create a bat file `C:\qt-everywhere-src-5.15.6\install-qt-everywhere-src-5.15.6.bat` and execute it.
