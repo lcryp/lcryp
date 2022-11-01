@@ -110,10 +110,10 @@ To build LcRyp Core with the GUI, a static build of Qt is required.
 * From official [releases](https://download.qt.io/official_releases/qt/).
 * Qt 5.15.6 [`qt-everywhere-opensource-src-5.15.6.zip`](https://download.qt.io/official_releases/qt/5.15/5.15.6/single/qt-everywhere-opensource-src-5.15.6.zip).
 ***Qt 5.15.6 this is the maximum supported version, higher version does not work.*** 
-* and expand it into a dedicated folder is `C:\qt-everywhere-src-5.15.6`.
+* And expand it into a dedicated folder is `C:\qt-everywhere-src-5.15.6`.
 
-** 2.Open "x64 Native Tools Command Prompt for VS 2022", and input the following commands or create a bat file:** 
-Create a bat file `C:\qt-everywhere-src-5.15.6\install-qt-everywhere-src-5.15.6.bat`
+**2. Open "x64 Native Tools Command Prompt for VS 2022", and input the following commands or create a bat file:** 
+Create a bat file `C:\qt-everywhere-src-5.15.6\install-qt-everywhere-src-5.15.6.bat` and execute it.
 
 ```
 @echo off
@@ -134,15 +134,15 @@ pause
 SETX QTBASEDIR "C:\qt-static-5.15.6\"
 ```
 
-*** To build LcRyp Core without Qt, unload or disable the `lcryp-qt` and `liblcryp_qt` projects.***
+***To build LcRyp Core without Qt, unload or disable the `lcryp-qt` and `liblcryp_qt` projects.***
 
 ### Building
 
 **1. To generate the project files `*.vcxproj`**
-For the Visual Studio 2022 in accordance with the configurations, it is necessary to run the python script toolchain from Makefile:
+For the Visual Studio 2022 in accordance with the configurations, it is necessary to run the python script toolchain from Makefile. To do this, enter the following in the command line:
 
 ```cmd
-"C:\Python38\python.exe" build_msvc\msvc-autogen.py
+"C:\Python38\python.exe" "C:\LcRyp\lctyp-master\build_msvc\msvc-autogen.py"
 ```
 
 **2. An optional step is to adjust the settings** 
@@ -159,4 +159,4 @@ Create a bat file `C:\LcRyp\lctyp-master\build_msvc.bat`
 pause
 ```
 
-Alternatively, open the `build_msvc/lcryp.sln` file in Visual Studio.
+Alternatively, open the `C:\LcRyp\lctyp-master\build_msvc\build_msvc\lcryp.sln` file in Visual Studio 2022.
