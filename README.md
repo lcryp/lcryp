@@ -112,7 +112,7 @@ To build LcRyp Core from the command-line, it is sufficient to only install the 
 **Catalogs by default (the explanation will be in the text below)**
 
 * Visual Studio 2022 `С:\Program Files\Microsoft Visual Studio\2022\`
-* Source codes LcRyp `C:\LcRyp\lcryp-master\`
+* Source codes LcRyp `C:\lcryp-master\`
 * Vcpkg ready assembly `C:\vcpkg\`
 * QT source codes `C:\qt-everywhere-src-5.15.6\`
 * QT ready assembly `C:\qt-static-5.15.6\`
@@ -127,7 +127,7 @@ To build LcRyp Core from the command-line, it is sufficient to only install the 
 ### Download the project LcRyp source codes ***[LcRyp source]***
 
 * Download source codes [lcryp-master](https://github.com/lcryp/LcRyp/archive/refs/heads/master.zip)
-* Use a folder `C:\LcRyp\lcryp-master\`
+* Use a folder `C:\lcryp-master\`
 
 ### Download the Microsoft Visual Studio ***[MVS install]***
 
@@ -166,10 +166,17 @@ To build [dependencies] (except for [Qt](#installation-qt)), the default approac
 @echo off
 powershell.exe -NoProfile -ExecutionPolicy Bypass "& {& '%~dp0scripts\bootstrap.ps1' %*}"
 %comspec% /k "С:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
+```
+
+After running this file, a console window will open in which you need to enter the following 3 lines in sequence:
+```
 .\vcpkg.exe update
+```
+```
 .\vcpkg.exe integrate install
-.\vcpkg.exe install --clean-after-build --triplet x64-windows-static --x-manifest-root "C:\LcRyp\lctyp-master\build_msvc" 
-pause
+```
+```
+.\vcpkg.exe install --clean-after-build --triplet x64-windows-static --x-manifest-root "C:\lcryp-master\build_msvc" 
 ```
 
 **3. By default, vcpkg makes both `release` and `debug` builds for each package.**
@@ -229,7 +236,7 @@ setx QTBASEDIR "C:\qt-static-5.15.6\" /M
 For the Visual Studio 2022 in accordance with the configurations, it is necessary to run the python script toolchain from Makefile. To do this, enter the following in the command line:
 
 ```cmd
-"C:\Python38\python.exe" "C:\LcRyp\lctyp-master\build_msvc\msvc-autogen.py"
+"C:\Python38\python.exe" "C:\lcryp-master\build_msvc\msvc-autogen.py"
 ```
 
 **2. An optional step is to adjust the settings** 
@@ -238,7 +245,7 @@ This project file contains settings that are common to all projects such as the 
 The Qt directories can also be set. To specify a non-default path to a static Qt package directory, use the `QTBASEDIR` environment variable.
 
 **3. To build from the command-line with the Visual Studio toolchain use:**
-Create a bat file `C:\LcRyp\lctyp-master\build_msvc.bat`
+Create a bat file `C:\lcryp-master\build_msvc.bat`
 
 ```cmd
 @echo off
@@ -248,7 +255,7 @@ pause
 
 Or you can run a ready-made file:
 
-`"C:\LcRyp\lctyp-master\build_msvc.bat"`
+`"C:\lcryp-master\build_msvc.bat"`
 
 ```cmd
 @echo off
@@ -264,4 +271,4 @@ copy "build_msvc\x64\Release\%prg%d.exe" "LcRyp Core\daemon\%prg%d.exe"
 pause
 ```
 
-Alternatively, open the `C:\LcRyp\lctyp-master\build_msvc\build_msvc\lcryp.sln` file in Visual Studio 2022. When compiling from the environment, specify the both `release` or `debug` builds for each method.
+Alternatively, open the `C:\lcryp-master\build_msvc\build_msvc\lcryp.sln` file in Visual Studio 2022. When compiling from the environment, specify the both `release` or `debug` builds for each method.
