@@ -3,6 +3,10 @@ LCRYP CORE INTEGRATION/STAGING TREE
 
 [Official site](https://www.lcryp.com) (the site is still under development)
 
+* [What is LcRyp Core?](#what-is-lcryp-core)
+* [License](#license)
+* [Development Process](#development-process)
+
 What is LcRyp Core?
 -------------------
 
