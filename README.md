@@ -90,7 +90,8 @@ For the correct assembly of projects, it is necessary to be able to execute pyth
 * Create environment variables `PYTHONUTF8` `1`
 
 ```cmd
-SETX PYTHONUTF8 1
+setx PYTHONUTF8 1 /M 
+setx Path "%Path%;C:\Python38\Scripts\;C:\Python38\" /M 
 ```
 
 ### Installation Vcpkg
@@ -151,7 +152,7 @@ pause
 `QTBASEDIR` `C:\qt-static-5.15.6\` 
 
 ```cmd
-SETX QTBASEDIR "C:\qt-static-5.15.6\"
+setx QTBASEDIR "C:\qt-static-5.15.6\"  /M 
 ```
 
 ***To build LcRyp Core without Qt, unload or disable the `lcryp-qt` and `liblcryp_qt` projects.***
