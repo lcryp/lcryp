@@ -259,7 +259,7 @@ pause
 
 Or you can run a ready-made file:
 
-`"C:\lcryp-master\build_msvc.bat"`
+`"C:\lcryp-master\build_msvc.bat"` 
 
 ```cmd
 @echo off
