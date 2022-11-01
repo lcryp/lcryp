@@ -68,7 +68,7 @@ To build LcRyp Core from the command-line, it is sufficient to only install the 
 
 * `QTBASEDIR` `C:\qt-static-5.15.6\`
 * `PYTHONUTF8` `1`
-* `Path` add to existing line C:\Python38\Scripts\;C:\Python38\;
+* `Path` add to existing line `C:\Python38\Scripts\;C:\Python38\;` If it is not automatically added during installation, install it yourself. Just check.
 
 ### Download the Microsoft Visual Studio 2022
 
