@@ -1,0 +1,24 @@
+#ifndef LCRYP_CRYPTO_SHA3_H
+#define LCRYP_CRYPTO_SHA3_H
+#include <span.h>
+#include <cstdlib>
+#include <stdint.h>
+void KeccakF(uint64_t (&st)[25]);
+class SHA3_256
+{
+private:
+    uint64_t m_state[25] = {0};
+    unsigned char m_buffer[8];
+    unsigned m_bufsize = 0;
+    unsigned m_pos = 0;
+    static constexpr unsigned RATE_BITS = 1088;
+    static constexpr unsigned RATE_BUFFERS = RATE_BITS / (8 * sizeof(m_buffer));
+    static_assert(RATE_BITS % (8 * sizeof(m_buffer)) == 0, "Rate must be a multiple of 8 bytes");
+public:
+    static constexpr size_t OUTPUT_SIZE = 32;
+    SHA3_256() {}
+    SHA3_256& Write(Span<const unsigned char> data);
+    SHA3_256& Finalize(Span<unsigned char> output);
+    SHA3_256& Reset();
+};
+#endif

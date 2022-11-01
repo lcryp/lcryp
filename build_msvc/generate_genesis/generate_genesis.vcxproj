@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\common.init.vcxproj" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5FEDEF20-3457-432B-A690-CC9936A12D6A}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ConfigurationType>Application</ConfigurationType>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>
+    </IncludePath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\generate_genesis.cpp" />
+  </ItemGroup>
+  <Import Label="ReplaceInFile" Project="..\msbuild\tasks\replaceinfile.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\liblcrypconsensus\liblcrypconsensus.vcxproj">
+      <Project>{2b384fa8-9ee1-4544-93cb-0d733c25e8ce}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\liblcryp_cli\liblcryp_cli.vcxproj">
+      <Project>{0667528c-d734-4009-adf9-c0d6c4a5a5a6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\liblcryp_common\liblcryp_common.vcxproj">
+      <Project>{7c87e378-df58-482e-aa2f-1bc129bc19ce}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\liblcryp_crypto\liblcryp_crypto.vcxproj">
+      <Project>{6190199c-6cf4-4dad-bfbd-93fa72a760c1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\liblcryp_qt\liblcryp_qt.vcxproj">
+      <Project>{2b4abff8-d1fd-4845-88c9-1f3c0a6512bf}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\liblcryp_node\liblcryp_node.vcxproj">
+      <Project>{460fee33-1fe1-483f-b3bf-931ff8e969a5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\liblcryp_util\liblcryp_util.vcxproj">
+      <Project>{b53a5535-ee9d-4c6f-9a26-f79ee3bc3754}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\liblcryp_wallet\liblcryp_wallet.vcxproj">
+      <Project>{93b86837-b543-48a5-a89b-7c87abb77df2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\liblcryp_zmq\liblcryp_zmq.vcxproj">
+      <Project>{792d487f-f14c-49fc-a9de-3fc150f31c3f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\libleveldb\libleveldb.vcxproj">
+      <Project>{18430fef-6b61-4c53-b396-718e02850f1b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\libsecp256k1\libsecp256k1.vcxproj">
+      <Project>{bb493552-3b8c-4a8c-bf69-a6e7a51d2ea6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\libunivalue\libunivalue.vcxproj">
+      <Project>{5724ba7d-a09a-4ba8-800b-c4c1561b3d69}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="..\common.vcxproj" />
+</Project>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\common.init.vcxproj" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7C87E378-DF58-482E-AA2F-1BC129BC19CE}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\base58.cpp">
+      <ObjectFileName>$(IntDir)base58.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\bech32.cpp">
+      <ObjectFileName>$(IntDir)bech32.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\chainparams.cpp">
+      <ObjectFileName>$(IntDir)chainparams.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\coins.cpp">
+      <ObjectFileName>$(IntDir)coins.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\bloom.cpp">
+      <ObjectFileName>$(IntDir)common_bloom.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\compressor.cpp">
+      <ObjectFileName>$(IntDir)compressor.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core_read.cpp">
+      <ObjectFileName>$(IntDir)core_read.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core_write.cpp">
+      <ObjectFileName>$(IntDir)core_write.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\deploymentinfo.cpp">
+      <ObjectFileName>$(IntDir)deploymentinfo.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\external_signer.cpp">
+      <ObjectFileName>$(IntDir)external_signer.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\init\common.cpp">
+      <ObjectFileName>$(IntDir)init_common.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\key.cpp">
+      <ObjectFileName>$(IntDir)key.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\key_io.cpp">
+      <ObjectFileName>$(IntDir)key_io.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\merkleblock.cpp">
+      <ObjectFileName>$(IntDir)merkleblock.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\net_types.cpp">
+      <ObjectFileName>$(IntDir)net_types.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\netaddress.cpp">
+      <ObjectFileName>$(IntDir)netaddress.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\netbase.cpp">
+      <ObjectFileName>$(IntDir)netbase.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\net_permissions.cpp">
+      <ObjectFileName>$(IntDir)net_permissions.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\outputtype.cpp">
+      <ObjectFileName>$(IntDir)outputtype.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\policy\feerate.cpp">
+      <ObjectFileName>$(IntDir)policy_feerate.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\policy\policy.cpp">
+      <ObjectFileName>$(IntDir)policy_policy.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\protocol.cpp">
+      <ObjectFileName>$(IntDir)protocol.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\psbt.cpp">
+      <ObjectFileName>$(IntDir)psbt.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rpc\rawtransaction_util.cpp">
+      <ObjectFileName>$(IntDir)rpc_rawtransaction_util.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rpc\external_signer.cpp">
+      <ObjectFileName>$(IntDir)rpc_external_signer.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rpc\util.cpp">
+      <ObjectFileName>$(IntDir)rpc_util.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scheduler.cpp">
+      <ObjectFileName>$(IntDir)scheduler.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\descriptor.cpp">
+      <ObjectFileName>$(IntDir)script_descriptor.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\miniscript.cpp">
+      <ObjectFileName>$(IntDir)script_miniscript.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\sign.cpp">
+      <ObjectFileName>$(IntDir)script_sign.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\signingprovider.cpp">
+      <ObjectFileName>$(IntDir)script_signingprovider.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\script\standard.cpp">
+      <ObjectFileName>$(IntDir)script_standard.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\warnings.cpp">
+      <ObjectFileName>$(IntDir)warnings.obj</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="..\common.vcxproj" />
+</Project>

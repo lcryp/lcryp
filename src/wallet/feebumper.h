@@ -1,0 +1,82 @@
+#ifndef LCRYP_WALLET_FEEBUMPER_H
+#define LCRYP_WALLET_FEEBUMPER_H
+#include <consensus/consensus.h>
+#include <script/interpreter.h>
+#include <primitives/transaction.h>
+class uint256;
+enum class FeeEstimateMode;
+struct bilingual_str;
+namespace wallet {
+class CCoinControl;
+class CWallet;
+class CWalletTx;
+namespace feebumper {
+enum class Result
+{
+    OK,
+    INVALID_ADDRESS_OR_KEY,
+    INVALID_REQUEST,
+    INVALID_PARAMETER,
+    WALLET_ERROR,
+    MISC_ERROR,
+};
+bool TransactionCanBeBumped(const CWallet& wallet, const uint256& txid);
+Result CreateRateBumpTransaction(CWallet& wallet,
+    const uint256& txid,
+    const CCoinControl& coin_control,
+    std::vector<bilingual_str>& errors,
+    CAmount& old_fee,
+    CAmount& new_fee,
+    CMutableTransaction& mtx,
+    bool require_mine);
+bool SignTransaction(CWallet& wallet, CMutableTransaction& mtx);
+Result CommitTransaction(CWallet& wallet,
+    const uint256& txid,
+    CMutableTransaction&& mtx,
+    std::vector<bilingual_str>& errors,
+    uint256& bumped_txid);
+struct SignatureWeights
+{
+private:
+    int m_sigs_count{0};
+    int64_t m_sigs_weight{0};
+public:
+    void AddSigWeight(const size_t weight, const SigVersion sigversion)
+    {
+        switch (sigversion) {
+        case SigVersion::BASE:
+            m_sigs_weight += weight * WITNESS_SCALE_FACTOR;
+            m_sigs_count += 1 * WITNESS_SCALE_FACTOR;
+            break;
+        case SigVersion::WITNESS_V0:
+            m_sigs_weight += weight;
+            m_sigs_count++;
+            break;
+        case SigVersion::TAPROOT:
+        case SigVersion::TAPSCRIPT:
+            assert(false);
+        }
+    }
+    int64_t GetWeightDiffToMax() const
+    {
+        return (  72 * m_sigs_count) - m_sigs_weight;
+    }
+};
+class SignatureWeightChecker : public DeferringSignatureChecker
+{
+private:
+    SignatureWeights& m_weights;
+public:
+    SignatureWeightChecker(SignatureWeights& weights, const BaseSignatureChecker& checker) : DeferringSignatureChecker(checker), m_weights(weights) {}
+    bool CheckECDSASignature(const std::vector<unsigned char>& sig, const std::vector<unsigned char>& pubkey, const CScript& script, SigVersion sigversion) const override
+    {
+        if (m_checker.CheckECDSASignature(sig, pubkey, script, sigversion)) {
+            m_weights.AddSigWeight(sig.size(), sigversion);
+            return true;
+        }
+        return false;
+    }
+};
+}
+}
+#endif

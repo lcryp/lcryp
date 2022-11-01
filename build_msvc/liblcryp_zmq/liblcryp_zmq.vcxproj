@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\common.init.vcxproj" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{792D487F-F14C-49FC-A9DE-3FC150F31C3F}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\zmq\zmqabstractnotifier.cpp">
+      <ObjectFileName>$(IntDir)zmq_zmqabstractnotifier.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\zmq\zmqnotificationinterface.cpp">
+      <ObjectFileName>$(IntDir)zmq_zmqnotificationinterface.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\zmq\zmqpublishnotifier.cpp">
+      <ObjectFileName>$(IntDir)zmq_zmqpublishnotifier.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\zmq\zmqrpc.cpp">
+      <ObjectFileName>$(IntDir)zmq_zmqrpc.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\zmq\zmqutil.cpp">
+      <ObjectFileName>$(IntDir)zmq_zmqutil.obj</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="..\common.vcxproj" />
+</Project>

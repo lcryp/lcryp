@@ -1,0 +1,15 @@
+prefix=${pcfiledir}/../..
+#libevent pkg-config source file
+
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libevent
+Description: libevent is an asynchronous notification event loop library
+Version: 2.1.12
+Conflicts:
+
+Libs: -L"${libdir}" -levent -Lws2_32 -Lshell32 -Ladvapi32
+Requires: 
+Cflags: -I"${includedir}"

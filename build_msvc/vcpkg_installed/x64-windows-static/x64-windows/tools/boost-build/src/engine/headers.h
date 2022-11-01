@@ -1,0 +1,12 @@
+#ifndef HEADERS_SW20111118_H
+#define HEADERS_SW20111118_H
+#include "config.h"
+#include "object.h"
+#include "rules.h"
+#include "regexp.h"
+void headers( TARGET * t );
+#ifdef OPT_HEADER_CACHE_EXT
+struct regexp;
+LIST * headers1( LIST *l, OBJECT * file, int rec, struct regexp *re[] );
+#endif
+#endif

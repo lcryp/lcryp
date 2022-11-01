@@ -1,0 +1,50 @@
+#include <net_types.h>
+#include <logging.h>
+#include <netaddress.h>
+#include <netbase.h>
+#include <univalue.h>
+static const char* BANMAN_JSON_VERSION_KEY{"version"};
+CBanEntry::CBanEntry(const UniValue& json)
+    : nVersion(json[BANMAN_JSON_VERSION_KEY].getInt<int>()),
+      nCreateTime(json["ban_created"].getInt<int64_t>()),
+      nBanUntil(json["banned_until"].getInt<int64_t>())
+{
+}
+UniValue CBanEntry::ToJson() const
+{
+    UniValue json(UniValue::VOBJ);
+    json.pushKV(BANMAN_JSON_VERSION_KEY, nVersion);
+    json.pushKV("ban_created", nCreateTime);
+    json.pushKV("banned_until", nBanUntil);
+    return json;
+}
+static const char* BANMAN_JSON_ADDR_KEY = "address";
+UniValue BanMapToJson(const banmap_t& bans)
+{
+    UniValue bans_json(UniValue::VARR);
+    for (const auto& it : bans) {
+        const auto& address = it.first;
+        const auto& ban_entry = it.second;
+        UniValue j = ban_entry.ToJson();
+        j.pushKV(BANMAN_JSON_ADDR_KEY, address.ToString());
+        bans_json.push_back(j);
+    }
+    return bans_json;
+}
+void BanMapFromJson(const UniValue& bans_json, banmap_t& bans)
+{
+    for (const auto& ban_entry_json : bans_json.getValues()) {
+        const int version{ban_entry_json[BANMAN_JSON_VERSION_KEY].getInt<int>()};
+        if (version != CBanEntry::CURRENT_VERSION) {
+            LogPrintf("Dropping entry with unknown version (%s) from ban list\n", version);
+            continue;
+        }
+        CSubNet subnet;
+        const auto& subnet_str = ban_entry_json[BANMAN_JSON_ADDR_KEY].get_str();
+        if (!LookupSubNet(subnet_str, subnet)) {
+            LogPrintf("Dropping entry with unparseable address or subnet (%s) from ban list\n", subnet_str);
+            continue;
+        }
+        bans.insert_or_assign(subnet, CBanEntry{ban_entry_json});
+    }
+}

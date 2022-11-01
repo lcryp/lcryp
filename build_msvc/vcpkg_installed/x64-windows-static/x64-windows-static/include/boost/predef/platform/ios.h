@@ -1,0 +1,33 @@
+#ifndef BOOST_PREDEF_PLAT_IOS_H
+#define BOOST_PREDEF_PLAT_IOS_H
+#include <boost/predef/os/ios.h>
+#include <boost/predef/version_number.h>
+#define BOOST_PLAT_IOS_DEVICE BOOST_VERSION_NUMBER_NOT_AVAILABLE
+#define BOOST_PLAT_IOS_SIMULATOR BOOST_VERSION_NUMBER_NOT_AVAILABLE
+#if BOOST_OS_IOS
+#    include <TargetConditionals.h>
+#    if defined(TARGET_OS_SIMULATOR) && (TARGET_OS_SIMULATOR == 1)
+#        undef BOOST_PLAT_IOS_SIMULATOR
+#        define BOOST_PLAT_IOS_SIMULATOR BOOST_VERSION_NUMBER_AVAILABLE
+#    elif defined(TARGET_IPHONE_SIMULATOR) && (TARGET_IPHONE_SIMULATOR == 1)
+#        undef BOOST_PLAT_IOS_SIMULATOR
+#        define BOOST_PLAT_IOS_SIMULATOR BOOST_VERSION_NUMBER_AVAILABLE
+#    else
+#        undef BOOST_PLAT_IOS_DEVICE
+#        define BOOST_PLAT_IOS_DEVICE BOOST_VERSION_NUMBER_AVAILABLE
+#    endif
+#endif
+#if BOOST_PLAT_IOS_SIMULATOR
+#    define BOOST_PLAT_IOS_SIMULATOR_AVAILABLE
+#    include <boost/predef/detail/platform_detected.h>
+#endif
+#if BOOST_PLAT_IOS_DEVICE
+#    define BOOST_PLAT_IOS_DEVICE_AVAILABLE
+#    include <boost/predef/detail/platform_detected.h>
+#endif
+#define BOOST_PLAT_IOS_SIMULATOR_NAME "iOS Simulator"
+#define BOOST_PLAT_IOS_DEVICE_NAME "iOS Device"
+#endif
+#include <boost/predef/detail/test.h>
+BOOST_PREDEF_DECLARE_TEST(BOOST_PLAT_IOS_SIMULATOR,BOOST_PLAT_IOS_SIMULATOR_NAME)
+BOOST_PREDEF_DECLARE_TEST(BOOST_PLAT_IOS_DEVICE,BOOST_PLAT_IOS_DEVICE_NAME)

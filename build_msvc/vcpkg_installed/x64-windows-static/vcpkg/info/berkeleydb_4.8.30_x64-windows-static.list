@@ -1,0 +1,15 @@
+x64-windows-static/
+x64-windows-static/include/
+x64-windows-static/include/clib_port.h
+x64-windows-static/include/db.h
+x64-windows-static/include/db_config.h
+x64-windows-static/include/db_cxx.h
+x64-windows-static/include/db_int.h
+x64-windows-static/include/dbstl_common.h
+x64-windows-static/lib/
+x64-windows-static/lib/libdb48.lib
+x64-windows-static/share/
+x64-windows-static/share/berkeleydb/
+x64-windows-static/share/berkeleydb/copyright
+x64-windows-static/share/berkeleydb/vcpkg.spdx.json
+x64-windows-static/share/berkeleydb/vcpkg_abi_info.txt
