@@ -31,7 +31,7 @@ Below are some notes on how to build LcRyp Core for Windows.
 
 The options known to work for building LcRyp Core on Windows are:
 
-On Windows, using [Microsoft Visual Studio](https://www.visualstudio.com)
+On Windows, using [Microsoft Visual Studio 2022](https://www.visualstudio.com)
 
 Building LcRyp Core with Visual Studio
 --------------------------------------
@@ -47,7 +47,7 @@ To build LcRyp Core from the command-line, it is sufficient to only install the 
 **Catalogs by default (the explanation will be in the text below)**
 
 * Visual Studio 2022 `C:\Programing Files\Microsoft Visual Studio\2022`
-* Source codes LcRyp `C:\LcRyp\lctyp-master`
+* Source codes LcRyp `C:\LcRyp\lcryp-master`
 * Vcpkg ready assembly `C:\vcpkg`
 * QT source codes `C:\qt-everywhere-src-5.15.6`
 * QT ready assembly `C:\qt-static-5.15.6`
@@ -65,8 +65,9 @@ Use a folder `C:\LcRyp\lctyp-master\`
 ###  Installation Python
 
 **1. In order to correctly assemble projects, it is necessary to execute a python script.**
-[Get started with python] https://www.python.org 
-[Install](https://www.python.org/ftp/python/3.8.0/python-3.8.0-amd64.exe) Python [3.8]. Python Installation folder `C:\Python38\`
+* [Get started with python] https://www.python.org 
+* [Install](https://www.python.org/ftp/python/3.8.0/python-3.8.0-amd64.exe) Python 3.8. 
+* Python Installation folder `C:\Python38\`
 
 **2. Create environment variables** 
 `PYTHONUTF8` `1`
