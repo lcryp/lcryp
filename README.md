@@ -1,7 +1,7 @@
 LCRYP CORE INTEGRATION/STAGING TREE
 ===================================
 
-Download the finished product (Portable) LcRyp-Wallet [all versions](https://github.com/lcryp/lcryp/tags), [the latest version](https://github.com/lcryp/LcRyp/releases/download/v1.0.0/LcRyp.Core.v1.0.0.Win64.7z)
+***Download the finished product (Portable) LcRyp-Wallet [all versions](https://github.com/lcryp/lcryp/tags), [the latest version](https://github.com/lcryp/LcRyp/releases/download/v1.0.0/LcRyp.Core.v1.0.0.Win64.7z)***
 
 [Official site](https://www.lcryp.com) (the site is still under development)
 
