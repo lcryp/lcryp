@@ -70,19 +70,19 @@ To build LcRyp Core from the command-line, it is sufficient to only install the 
 * `PYTHONUTF8` `1`
 * `Path` add to existing line `C:\Python38\Scripts\;C:\Python38\;` If it is not automatically added during installation, install it yourself. Just check.
 
-### Download the Microsoft Visual Studio ***[install]***
+### Download the Microsoft Visual Studio ***[MVS install]***
 
 * On Windows x64, using [Microsoft Visual Studio](https://www.visualstudio.com)
 * Download [Microsoft Visual Studio 2022](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false)
 * Configure component installation: `Classic and mobile apps` -> `C++ desktop development`
 * Use a folder `С:\Program Files\Microsoft Visual Studio\2022\`
 
-### Download the project LcRyp source codes ***[source]***
+### Download the project LcRyp source codes ***[LcRyp source]***
 
 * Download source codes [lcryp-master](https://github.com/lcryp/LcRyp/archive/refs/heads/master.zip)
 * Use a folder `C:\LcRyp\lcryp-master\`
 
-###  Installation Python ***[install]***
+###  Installation Python ***[Python install]***
 
 For the correct assembly of projects, it is necessary to be able to execute python scripts.
 * Get started with [Python](https://www.python.org)
@@ -95,7 +95,7 @@ setx PYTHONUTF8 1 /M
 setx Path "%Path%;C:\Python38\Scripts\;C:\Python38\" /M 
 ```
 
-### Installation Vcpkg ***[source & assembly]***
+### Installation Vcpkg ***[Vcpkg source & assembly]***
 
 To build [dependencies] (except for [Qt](#installation-qt)), the default approach is to use Vcpkg:
 
@@ -124,7 +124,7 @@ To save build time and disk space, one could skip `debug` builds (example uses P
 Add-Content -Path "C:\vcpkg\triplets\x64-windows-static.cmake" -Value "set(VCPKG_BUILD_TYPE release)"
 ```
 
-### Installation Qt ***[source & assembly]***
+### Installation Qt ***[Qt source & assembly]***
 
 To build LcRyp Core with the GUI, a static build of Qt is required.
 
