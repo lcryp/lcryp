@@ -41,7 +41,7 @@ Building LcRyp Core with Visual Studio
 
 * [Introduction](#introduction)
 * [Download the Microsoft Visual Studio 2022](#download-the-microsoft-visual-studio-2022)
-* [Download the project LcRyp source codes](#download-the-project-source-codes)
+* [Download the project LcRyp source codes](#download-the-project-lcryp-source-codes)
 * [Installation Python](#installation-python)
 * [Installation Vcpkg](#installation-vcpkg)
 * [Installation Qt](#installation-qt)
