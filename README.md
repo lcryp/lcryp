@@ -65,7 +65,7 @@ Use a folder `C:\LcRyp\lcryp-master\`
 ###  Installation Python
 
 **1. In order to correctly assemble projects, it is necessary to execute a python script.**
-* Get started [with python] (https://www.python.org)
+* Get started [with python](https://www.python.org)
 * Install [Python 3.8](https://www.python.org/ftp/python/3.8.0/python-3.8.0-amd64.exe) 
 * Python Installation folder `C:\Python38\`
 
