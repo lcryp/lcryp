@@ -43,7 +43,7 @@ using your CPU cores!
 Protection with all the best
 ----------------------------
 
-The source code of the LcRyp coin is based on the latest version of bitcoin, so it supports 
+The source code of the LcRyp coin is based on the latest version of [bitcoin](https://github.com/bitcoin/bitcoin), so it supports 
 all the created bitcoin achievements. Moreover, the development is carried out in such 
 a way that the architecture of the LcRyp code supports the ability to update its code according 
 to any future bitcoin source code updates.
