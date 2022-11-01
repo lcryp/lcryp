@@ -95,7 +95,7 @@ setx PYTHONUTF8 1 /M
 setx Path "%Path%;C:\Python38\Scripts\;C:\Python38\" /M 
 ```
 
-### Installation Vcpkg ***[source]***
+### Installation Vcpkg ***[source & assembly]***
 
 To build [dependencies] (except for [Qt](#installation-qt)), the default approach is to use Vcpkg:
 
@@ -124,7 +124,7 @@ To save build time and disk space, one could skip `debug` builds (example uses P
 Add-Content -Path "C:\vcpkg\triplets\x64-windows-static.cmake" -Value "set(VCPKG_BUILD_TYPE release)"
 ```
 
-### Installation Qt ***[source]***
+### Installation Qt ***[source & assembly]***
 
 To build LcRyp Core with the GUI, a static build of Qt is required.
 
@@ -169,7 +169,7 @@ setx QTBASEDIR "C:\qt-static-5.15.6\" /M
 
 ***To build LcRyp Core without Qt, unload or disable the `lcryp-qt` and `liblcryp_qt` projects.***
 
-### Building
+### Building ***[LcRyp assembly]***
 
 **1. To generate the project files `*.vcxproj`**
 For the Visual Studio 2022 in accordance with the configurations, it is necessary to run the python script toolchain from Makefile. To do this, enter the following in the command line:
