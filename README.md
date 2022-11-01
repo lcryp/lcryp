@@ -44,7 +44,7 @@ Solution and project files to Visual Studio can be found in the `build_msvc` dir
 
 To build LcRyp Core from the command-line, it is sufficient to only install the Visual Studio Build Tools component.
 
-** Catalogs by default (the explanation will be in the text below) **
+**Catalogs by default (the explanation will be in the text below)**
 
 * Visual Studio 2022 `C:\Programing Files\Microsoft Visual Studio\2022`
 * Source codes LcRyp `C:\LcRyp\lctyp-master`
@@ -53,20 +53,20 @@ To build LcRyp Core from the command-line, it is sufficient to only install the 
 * QT ready assembly `C:\qt-static-5.15.6`
 * Python `C:\Python38\`
 
-** Environment Variables **
+**Environment Variables**
 
 * `QTBASEDIR` `C:\qt-static-5.15.6\`
 * `PYTHONUTF8` `1`
 
 ###  Installation Python
 
-** [Install](https://www.python.org) Python [3.8]. Python Installation folder `C:\Python38\` **
+**[Install](https://www.python.org) Python [3.8]. Python Installation folder `C:\Python38\`**
 
 ### Installation Vcpkg
 
 To build [dependencies] (except for [Qt](#qt)), the default approach is to use the [vcpkg](https://docs.microsoft.com/en-us/cpp/vcpkg) package manager from Microsoft:
 
-** 1. [Install](https://www.vcpkg.io/en/getting-started.html) vcpkg. **
+**1. [Install](https://www.vcpkg.io/en/getting-started.html) vcpkg.**
 Create a bat file `C:\vcpkg\bootstrap-vcpkg.bat`
 
 ``` 
@@ -88,13 +88,13 @@ Add-Content -Path "vcpkg\triplets\x64-windows-static.cmake" -Value "set(VCPKG_BU
 
 To build LcRyp Core with the GUI, a static build of Qt is required.
 
-** 1. Download a single ZIP archive of Qt source code ** 
+**1. Download a single ZIP archive of Qt source code** 
 from https://download.qt.io/official_releases/qt/ 
 (e.g., [`qt-everywhere-opensource-src-5.15.6.zip`](https://download.qt.io/official_releases/qt/5.15/5.15.6/single/qt-everywhere-opensource-src-5.15.6.zip)), 
 (this is the maximum supported version, higher version does not work.) and expand it into a dedicated folder. 
 The following instructions assume that this folder is `C:\qt-everywhere-src-5.15.6`.
 
-** 2. Open "x64 Native Tools Command Prompt for VS 2022", and input the following commands or create a bat file: ** 
+** 2.Open "x64 Native Tools Command Prompt for VS 2022", and input the following commands or create a bat file:** 
 Create a bat file `C:\qt-everywhere-src-5.15.6\install-qt-everywhere-src-5.15.6.bat`
 
 ```
@@ -109,7 +109,7 @@ nmake install
 pause
 ```
 
-** 3. Create environment variables ** 
+**3. Create environment variables** 
 `QTBASEDIR` `C:\qt-static-5.15.6\` 
 
 *** To build LcRyp Core without Qt, unload or disable the `lcryp-qt`, `liblcryp_qt` and `test_lcryp-qt` projects.***
@@ -123,12 +123,12 @@ For the Visual Studio 2022 in accordance with the configurations, it is necessar
 python build_msvc\msvc-autogen.py
 ```
 
-** 2. An optional step is to adjust the settings** 
+**2. An optional step is to adjust the settings** 
 In the `build_msvc` directory and the `common.init.vcxproj` file. 
 This project file contains settings that are common to all projects such as the runtime library version and target Windows SDK version. 
 The Qt directories can also be set. To specify a non-default path to a static Qt package directory, use the `QTBASEDIR` environment variable.
 
-** 3. To build from the command-line with the Visual Studio toolchain use:**
+**3. To build from the command-line with the Visual Studio toolchain use:**
 Create a bat file `C:\LcRyp\lctyp-master\build_msvc.bat`
 
 ```
@@ -137,4 +137,4 @@ Create a bat file `C:\LcRyp\lctyp-master\build_msvc.bat`
 pause
 ```
 
-*** Alternatively, open the `build_msvc/lcryp.sln` file in Visual Studio. ***
+***Alternatively, open the `build_msvc/lcryp.sln` file in Visual Studio.***
