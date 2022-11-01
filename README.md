@@ -34,7 +34,7 @@ Below are some notes on how to build LcRyp Core for Windows x64.
 
 The options known to work for building LcRyp Core on Windows are:
 
-On Windows x64, using [Microsoft Visual Studio 2022](https://www.visualstudio.com)
+On Windows x64, using [Microsoft Visual Studio](https://www.visualstudio.com)
 
 Building LcRyp Core with Visual Studio
 --------------------------------------
@@ -70,8 +70,9 @@ To build LcRyp Core from the command-line, it is sufficient to only install the 
 * `PYTHONUTF8` `1`
 * `Path` add to existing line `C:\Python38\Scripts\;C:\Python38\;` If it is not automatically added during installation, install it yourself. Just check.
 
-### Download the Microsoft Visual Studio 2022
+### Download the Microsoft Visual Studio
 
+* On Windows x64, using [Microsoft Visual Studio](https://www.visualstudio.com)
 * Download [Microsoft Visual Studio 2022](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false)
 * Configure component installation: `Classic and mobile apps` -> `C++ desktop development`
 * Use a folder `С:\Program Files\Microsoft Visual Studio\2022\`
