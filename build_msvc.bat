@@ -1,6 +1,6 @@
 @echo off
 set prg=lcryp
-"C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\msbuild.exe" build_msvc\%prg%.sln -property:Configuration=Release -maxCpuCount -verbosity:minimal
+"C:\Program Files\Microsoft Visual Studio\2022\MSBuild\Current\Bin\msbuild.exe" build_msvc\%prg%.sln -property:Configuration=Release -maxCpuCount -verbosity:minimal
 rd /s /q "LcRyp Core"
 MD "LcRyp Core"
 MD "LcRyp Core\daemon"

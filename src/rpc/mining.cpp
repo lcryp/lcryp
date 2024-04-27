@@ -924,7 +924,7 @@ static RPCHelpMan setmining()
                                     if (!request.params[1].isNull()) {
                                         destination = DecodeDestination(!request.params[1].isNull() ? request.params[1].get_str() : "");
                                         if (!IsValidDestination(destination)) {
-                                            return false;
+                                            return false;// throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Error: Invalid address");
                                         }
                                     }
                                     const int nGenProcLimit{ !request.params[2].isNull() ? stoi(request.params[2].get_str()) : DEFAULT_PROC_LIMIT };

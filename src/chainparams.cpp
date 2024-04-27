@@ -39,6 +39,10 @@ public:
         consensus.signet_blocks = false;
         consensus.signet_challenge.clear();
         consensus.nSubsidyHalvingInterval = 210240.0;
+        
+            
+        
+            
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x2fd6fa1585988ceae4d8949a739b3a8df6274f4d41c88e2effb96497f35bded6");
         consensus.BIP65Height = 0;
@@ -66,7 +70,7 @@ public:
         pchMessageStart[0] = 0xAD;
         pchMessageStart[1] = 0xFC;
         pchMessageStart[2] = 0xCB;
-        pchMessageStart[2] = 0xCB;
+        pchMessageStart[3] = 0x00;
         nDefaultPort = 4995;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size = 5;
@@ -77,6 +81,13 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x74e47d530e63050644fc3f2657662b6cd23c2648c3561bf47ac193eb06892939"));
         vSeeds.emplace_back("lcryp.com");
         vSeeds.emplace_back("193.93.17.17");
+        vSeeds.emplace_back("5.154.181.59");
+        vSeeds.emplace_back("213.109.236.129");
+        vSeeds.emplace_back("45.129.99.150");
+        
+        
+        
+        
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
@@ -91,6 +102,18 @@ public:
         checkpointData = {
             {
                 {0, uint256S("0x2fd6fa1585988ceae4d8949a739b3a8df6274f4d41c88e2effb96497f35bded6")},
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
             }
         };
         m_assumeutxo_data = MapAssumeutxo{
@@ -109,6 +132,8 @@ public:
         consensus.signet_blocks = false;
         consensus.signet_challenge.clear();
         consensus.nSubsidyHalvingInterval = 210240.0;
+        
+            
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x2fd6fa1585988ceae4d8949a739b3a8df6274f4d41c88e2effb96497f35bded6");
         consensus.BIP65Height = 0;
@@ -135,8 +160,8 @@ public:
         consensus.defaultAssumeValid = uint256{};
         pchMessageStart[0] = 0xAD;
         pchMessageStart[1] = 0xCC;
-        pchMessageStart[2] = 0xEC;
         pchMessageStart[2] = 0xEA;
+        pchMessageStart[3] = 0x00;
         nDefaultPort = 14995;
         nPruneAfterHeight = 1000;
         m_assumed_blockchain_size = 2;
@@ -149,6 +174,8 @@ public:
         vSeeds.clear();
         vSeeds.emplace_back("lcryp.com");
         vSeeds.emplace_back("193.93.17.17");
+        vSeeds.emplace_back("5.154.181.59");
+        vSeeds.emplace_back("213.109.236.129");
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
@@ -183,6 +210,7 @@ public:
             bin = ParseHex("512103ad5e0edad18cb1f0fc0d28a3d4f1f3e445640337489abb10404f2d1e086be430210359ef5021964fe22d6f8e05b2463c9540ce96883fe3b278760f048f5189f2e6c452ae");
             vSeeds.emplace_back("lcryp.com");
             vSeeds.emplace_back("193.93.17.17");
+            vSeeds.emplace_back("5.154.181.59");
             consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000001");
             consensus.defaultAssumeValid = uint256{};
             m_assumed_blockchain_size = 1;
@@ -294,8 +322,8 @@ public:
         consensus.defaultAssumeValid = uint256{};
         pchMessageStart[0] = 0xAF;
         pchMessageStart[1] = 0xCE;
-        pchMessageStart[2] = 0xAF;
         pchMessageStart[2] = 0xDD;
+        pchMessageStart[3] = 0x00;
         nDefaultPort = 15106;
         nPruneAfterHeight = args.GetBoolArg("-fastprune", false) ? 100 : 1000;
         m_assumed_blockchain_size = 0;

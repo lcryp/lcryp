@@ -10,7 +10,6 @@
 //
 // MIDAS
 //
-
 bool avgRecentTimestamps(const CBlockIndex* pindexLast, int64_t* avgOf5, int64_t* avgOf7, int64_t* avgOf9, int64_t* avgOf17, int64_t* BlockHeightTime, const Consensus::Params& params)
 {
     try {
@@ -67,6 +66,7 @@ bool avgRecentTimestamps(const CBlockIndex* pindexLast, int64_t* avgOf5, int64_t
         return false;
     }
 }
+
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader* pblock, const Consensus::Params& params)
 {
     try {
@@ -81,12 +81,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         int64_t now;
         int64_t reg;
         int64_t BlockHeightTime;
-        int64_t nFastInterval = (params.nPowTargetSpacing * 9) / 10;
+        int64_t nFastInterval = (params.nPowTargetSpacing * 9) / 10; 
         int64_t nSlowInterval = (params.nPowTargetSpacing * 11) / 10;
         int64_t nIntervalDesired = params.nPowTargetSpacing;
         if (pindexLast == NULL)
             return UintToArith256(params.powLimit).GetCompact();
-        if (!avgRecentTimestamps(pindexLast, &avgOf5, &avgOf7, &avgOf9, &avgOf17, &BlockHeightTime, params))
+        if (!avgRecentTimestamps(pindexLast, &avgOf5, &avgOf7, &avgOf9, &avgOf17, &BlockHeightTime, params)) 
 			return UintToArith256(params.powLimit).GetCompact();
         now = pindexLast->GetBlockTime();
         if (now < BlockHeightTime + params.DifficultyAdjustmentInterval() && now > BlockHeightTime)

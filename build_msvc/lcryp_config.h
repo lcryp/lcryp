@@ -15,7 +15,7 @@
 #define CLIENT_VERSION_MAJOR 1
 
 /* Minor version */
-#define CLIENT_VERSION_MINOR 0
+#define CLIENT_VERSION_MINOR 2
 
 /* Copyright holder(s) before %s replacement */
 #define COPYRIGHT_HOLDERS "The %s developers"
@@ -27,7 +27,7 @@
 #define COPYRIGHT_HOLDERS_SUBSTITUTION "LcRyp Core"
 
 /* Copyright year */
-#define COPYRIGHT_YEAR 2022
+#define COPYRIGHT_YEAR 2024
 
 /* Define to 1 to enable wallet functions */
 #define ENABLE_WALLET 1
@@ -125,13 +125,13 @@
 #define PACKAGE_NAME "LcRyp Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "LcRyp Core 1.0.0"
+#define PACKAGE_STRING "LcRyp Core 1.2.0"
 
 /* Define to the home page for this package. */
 #define PACKAGE_URL "https://lcrypcore.org/"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "1.0.0"
+#define PACKAGE_VERSION "1.2.0"
 
 /* Define this symbol if the minimal qt platform exists */
 #define QT_QPA_PLATFORM_MINIMAL 1
